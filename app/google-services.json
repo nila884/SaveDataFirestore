@@ -1,0 +1,114 @@
+{
+  "project_info": {
+    "project_number": "623217454203",
+    "firebase_url": "https://saveandstore-90a70.firebaseio.com",
+    "project_id": "saveandstore-90a70",
+    "storage_bucket": "saveandstore-90a70.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623217454203:android:e803c3818d00a2848ac6de",
+        "android_client_info": {
+          "package_name": "com.nila.firebaseauthentification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623217454203-6pjkvbfrfr00vbqtab306g32iupk6una.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nila.firebaseauthentification",
+            "certificate_hash": "11ea4950020ef2b0944cee20be3998e537e29f81"
+          }
+        },
+        {
+          "client_id": "623217454203-bc36063v39spjvj994aa3afp47co3kb4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx8PAGt7d0Fp_txpnC70fjhHZesGhz1rM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623217454203-9j8qf9qhj654cg66ie5ugci7euhur0ub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623217454203:android:b01c95ad42348a9f8ac6de",
+        "android_client_info": {
+          "package_name": "com.nila.saveandstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623217454203-bc36063v39spjvj994aa3afp47co3kb4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx8PAGt7d0Fp_txpnC70fjhHZesGhz1rM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623217454203-9j8qf9qhj654cg66ie5ugci7euhur0ub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623217454203:android:bf6c8544b635a34b8ac6de",
+        "android_client_info": {
+          "package_name": "com.nila.saveyourdata"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623217454203-sqk6ht627ibrfag55f59q7shid9pfgeu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nila.saveyourdata",
+            "certificate_hash": "11ea4950020ef2b0944cee20be3998e537e29f81"
+          }
+        },
+        {
+          "client_id": "623217454203-bc36063v39spjvj994aa3afp47co3kb4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx8PAGt7d0Fp_txpnC70fjhHZesGhz1rM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623217454203-9j8qf9qhj654cg66ie5ugci7euhur0ub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

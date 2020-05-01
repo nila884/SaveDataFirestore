@@ -1,11 +1,7 @@
-package com.codingwithmitch.googlemaps2018.ui;
+package com.nila.saveandstore.ui.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -13,18 +9,24 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.codingwithmitch.googlemaps2018.R;
-import com.codingwithmitch.googlemaps2018.models.User;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
+import com.nila.saveandstore.Models.User;
+import com.nila.saveandstore.R;
 
 import static android.text.TextUtils.isEmpty;
-import static com.codingwithmitch.googlemaps2018.util.Check.doStringsMatch;
+import static com.nila.saveandstore.util.Check.doStringsMatch;
 
 
 public class RegisterActivity extends AppCompatActivity implements
@@ -69,6 +71,7 @@ public class RegisterActivity extends AppCompatActivity implements
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+
                         Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
 
                         if (task.isSuccessful()){
@@ -86,7 +89,7 @@ public class RegisterActivity extends AppCompatActivity implements
                             mDb.setFirestoreSettings(settings);
 
                             DocumentReference newUserRef = mDb
-                                    .collection(getString(R.string.collection_users))
+                                    .collection("Users")
                                     .document(FirebaseAuth.getInstance().getUid());
 
                             newUserRef.set(user).addOnCompleteListener(new OnCompleteListener<Void>() {

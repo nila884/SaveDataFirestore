@@ -1,4 +1,4 @@
-package com.nila.saveandstore;
+package com.nila.saveandstore.ui.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +17,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreSettings;
+import com.nila.saveandstore.Models.User;
+import com.nila.saveandstore.R;
+import com.nila.saveandstore.singleton.UserClient;
 
 import static android.text.TextUtils.isEmpty;
 
@@ -80,25 +87,28 @@ public class LoginActivity extends AppCompatActivity implements
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                     Toast.makeText(LoginActivity.this, "Authenticated with: " + user.getEmail(), Toast.LENGTH_SHORT).show();
 
-//                    FirebaseFirestore db = FirebaseFirestore.getInstance();
-//                    FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
-//                            .setTimestampsInSnapshotsEnabled(true)
-//                            .build();
-//                    db.setFirestoreSettings(settings);
-//
-//                    DocumentReference userRef = db.collection(getString(R.string.collection_users))
-//                            .document(user.getUid());
-//
-//                    userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                            if(task.isSuccessful()){
-//                                Log.d(TAG, "onComplete: successfully set the user client.");
-//                                User user = task.getResult().toObject(User.class);
-//                                ((UserClient)(getApplicationContext())).setUser(user);
-//                            }
-//                        }
-//                    });
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+                    FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
+                            .setTimestampsInSnapshotsEnabled(true)
+                            .build();
+                    db.setFirestoreSettings(settings);
+
+                    DocumentReference userRef = db.collection("Users")
+                            .document(user.getUid());
+
+                    userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            if(task.isSuccessful()){
+                                Log.d(TAG, "onComplete: successfully set the user client.");
+                                User user = task.getResult().toObject(User.class);
+                                ((UserClient)(getApplicationContext())).setUser(user);
+
+                            }
+                        }
+                    });
+
+
 
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -125,6 +135,7 @@ public class LoginActivity extends AppCompatActivity implements
         super.onStop();
         if (mAuthListener != null) {
             FirebaseAuth.getInstance().removeAuthStateListener(mAuthListener);
+
         }
     }
 
